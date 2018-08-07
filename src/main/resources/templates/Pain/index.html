@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org ">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${pains} and ${pains.size()}">no pain entries yet :)</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Intensity</th>
+        <th>Date</th>
+    </tr>
+
+    <tr th:each="pain : ${pains}">
+        <td th:text="${pain.location}"></td>
+        <td th:text="${pain.type}"></td>
+        <td th:text="${pain.intensity}"></td>
+        <td th:text="${pain.date}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
