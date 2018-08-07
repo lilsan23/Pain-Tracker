@@ -34,6 +34,9 @@ public class Pain {
         this.type = type;
         this.intensity = intensity;
         this.date = date;
+    }
+
+    public Pain() {}
 
         public int getId(){return id;}
 

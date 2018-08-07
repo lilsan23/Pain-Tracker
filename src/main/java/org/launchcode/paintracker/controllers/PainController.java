@@ -41,5 +41,14 @@ public class PainController {
     public String processAddPainEntryForm(@ModelAttribute @Valid Pain newPain,
                                        Errors errors,
                                        Model model) {
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Pain Entry");
+            return "pain/add";
+        }
+
+        painDao.save(newPain);
+        return "redirect:";
+
     }
+
 }
