@@ -1,10 +1,10 @@
 package org.launchcode.paintracker.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Pain {
@@ -29,6 +29,9 @@ public class Pain {
     @Size(min=8, max=10)
     private String date;
 
+    @ManyToOne
+    private Profile profiles;
+
     public Pain(String location, String type, String intensity, String date) {
         this.location = location;
         this.type = type;
@@ -36,7 +39,7 @@ public class Pain {
         this.date = date;
     }
 
-    public Pain() {}
+        public Pain() {}
 
         public int getId(){return id;}
 
@@ -55,4 +58,6 @@ public class Pain {
         public String getDate() {return date;}
 
         public void setDate (String date){this.date = date;}
+
+
     }

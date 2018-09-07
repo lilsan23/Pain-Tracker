@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${profile}">
+    <div style="float: left; width: 40%;" class="form-group">
+        <h2>Register</h2>
+
+        <label th:for="email">Email:</label>
+        <input class="form-control" th:field="*{email}" />
+        <span th:errors="*{email}" class="error"></span>
+
+        <!--<label th:for="email">Email:</label>-->
+        <!--<input class="form-control" th:field="*{email}" />-->
+        <!--<span th:errors="*{email}" class="error"></span>-->
+
+        <!--<label th:for="password">Password:</label>-->
+        <!--<input class="form-control" th:field="*{password}" />-->
+        <!--<span th:errors="*{password}" class="error"></span>-->
+
+        <!--<label th:for="password">Password:</label>-->
+        <!--<input class="form-control" th:field="*{password}" />-->
+        <!--<span th:errors="*{password}" class="error"></span>-->
+
+        <!--<label th:for="name">Name:</label>-->
+        <!--<input class="form-control" th:field="*{name}" />-->
+        <!--<span th:errors="*{name}" class="error"></span>-->
+
+        <!--<label th:for="age">Age:</label>-->
+        <!--<input class="form-control" th:field="*{age}" />-->
+        <!--<span th:errors="*{age}" class="error"></span>-->
+
+        <!--<label th:for="weight">Weight</label>-->
+        <!--<input class="form-control" th:field="*{weight}" />-->
+        <!--<span th:errors="*{weight}" class="error"></span>-->
+
+        <!--<label th:for="height">Height</label>-->
+        <!--<input class="form-control" th:field="*{height}" />-->
+        <!--<span th:errors="*{height}" class="error"></span>-->
+
+        <!--<label th:for="genderl">Gender</label>-->
+        <!--<input class="form-control"  type="radio" th:field="*{Gender}" />-->
+        <!--<span th:errors="*{location}" class="error"></span>-->
+
+        <!--<button type="submit" name="register" th:text="#{seedstarter.row.add}">Register</button>-->
+    </div>
+</form>
+
+<div>
+    <style>
+          <div style="float: left; width: 10%;" class="vl">
+             <div class="vertical-center"></div>
+          </div>
+    </style>
+</div>
+
+<form method="post" style="max-width:600px;" th:object="${profile}">
+    <div style="float: right; width: 40%;">
+
+        <h2>Login</h2>
+
+        <!--<label th:for="email">Email</label>-->
+        <!--<input class="form-control" th:field="*{email}" />-->
+        <!--<span th:errors="*{location}" class="error"></span>-->
+
+        <!--<label th:for="password">Password</label>-->
+        <!--<input class="form-control" th:field="*{password}" />-->
+        <!--<span th:errors="*{password}" class="error"></span>-->
+
+        <!--<p><strong>Office Hours:</strong></p>-->
+
+        <!--<button type="submit" name="login">Login</button>-->
+
+    </div>
+</form>
+
+</body>
+</html>

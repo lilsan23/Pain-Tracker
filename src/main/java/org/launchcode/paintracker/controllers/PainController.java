@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import javax.xml.stream.Location;
+import java.sql.Timestamp;
 
 @Controller
 @RequestMapping("pain")
@@ -23,10 +24,8 @@ public class PainController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
-
-        model.addAttribute("pains", painDao.findAll());
-        model.addAttribute("title", "My Profile");
-
+        model.addAttribute("title", "List of Pain Entries");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         return "pain/index";
     }
 

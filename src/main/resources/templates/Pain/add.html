@@ -8,25 +8,40 @@
 
 <form method="post" style="max-width:600px;" th:object="${pain}">
     <div class="form-group">
-        <label th:for="location">LOcation</label>
-        <input class="form-control" th:field="*{location}" />
-        <span th:errors="*{location}" class="error"></span>
+        <label th:for="location">Location:</label>
+
+        <tr>
+            <td><select name="location" >
+                <option value="head">Head</option>
+                <option value="neck" selected="selected">Neck</option>
+                <option value="Shoulder">Shoulder</option></select>
+            </td>
+        </tr>
+
     </div>
+
     <div class="form-group">
-        <label th:for="type">Type</label>
-        <input class="form-control" th:field="*{type}" />
+        <label th:for="type">Type:</label>
+
+        <tr>
+            <td><select name="type" >
+                <option value="acute">Acute</option>
+                <option value="chronic" selected="selected">Chronic</option>
+                <option value="breakthrough">Breakthrough</option></select>
+            </td>
+        </tr>
         <span th:errors="*{type}" class="error"></span>
     </div>
 
     <div class="form-group">
-        <label th:for="intensity">Intensity</label>
+        <label th:for="intensity">Intensity:</label>
         <input class="form-control" th:field="*{intensity}" />
         <span th:errors="*{intensity}" class="error"></span>
     </div>
 
     <div class="form-group">
-        <label th:for="date">Date</label>
-        <input class="form-control" th:field="*{date}" />
+        <label th:for="date">Date:</label>
+        <input class="form-control" type="date" th:value="2018-6-9" th:field="*{date}" />
         <span th:errors="*{date}" class="error"></span>
     </div>
 

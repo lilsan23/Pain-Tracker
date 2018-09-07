@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
 <body class="container">
 
-<h3 th:text="${title}">Default Title</h3>
+<h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${pains} and ${pains.size()}">no pain entries yet :)</p>
+
 
 <table class="table">
 
@@ -21,11 +24,10 @@
         <td th:text="${pain.location}"></td>
         <td th:text="${pain.type}"></td>
         <td th:text="${pain.intensity}"></td>
-        <td th:text="${pain.date}"></td>>
+        <td th:text="${pain.date}"></td>
     </tr>
 
 </table>
-
 
 </body>
 </html>

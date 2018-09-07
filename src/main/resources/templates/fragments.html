@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
+
     <title th:text="${title}">My Pain Profile</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -12,8 +13,9 @@
 <body>
 
 <nav th:fragment="navigation">
-    <a href="/pain">Profile</a> |
-    <a href="/add/">Add Entry</a> |
+    <a href="/pain">Home</a> |
+    <a href="/pain/profile/">Profile</a> |
+    <a href="/pain/add/">Add Entry</a> |
 </nav>
 
 </body>
