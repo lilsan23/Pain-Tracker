@@ -24,6 +24,7 @@ public class PainController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
+        model.addAttribute("pains", painDao.findAll());
         model.addAttribute("title", "List of Pain Entries");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         return "pain/index";
